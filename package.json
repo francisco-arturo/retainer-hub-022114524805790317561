@@ -1,0 +1,11 @@
+{
+  "name": "holdthatsmile-retainer-hub",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "HoldThatSmile customer app and lab operations prototype",
+  "scripts": {
+    "start": "node dev-server.mjs",
+    "verify": "node scripts/verify.mjs && node scripts/render-smoke.mjs && node scripts/smoke.mjs"
+  }
+}

@@ -1,0 +1,54 @@
+# Progress - Prototype: retainer-hub-022114524805790317561
+
+## Current State
+
+- Built a working HoldThatSmile customer app and lab operations console.
+- Customers can view a seeded active order, track the full seven-stage journey, place a new order through a three-step checkout, review order history, reorder and manage their profile/preferences.
+- Staff can sign in with demo PIN `2468`, review live metrics, filter orders, open a manufacturing detail, advance stages, collect a pending payment, browse the production board, customer book and payment ledger.
+- State is seeded in `js/data.js` and persisted in browser `localStorage`; reset is available in the footer.
+- Design is warm clinical: cream, deep green, mint and coral, with a serif display face and custom SVG retainer illustration.
+
+## Current Objective
+
+Deliver the first complete prototype slice for HoldThatSmile: ordering, customer tracking, accounts, payments and an admin dashboard covering orders, customers and manufacturing.
+
+## Last Updated
+
+- **Last Updated**: 2026-10-26
+- **Recommended Next Step**: hand over for local review. On approval: create/push the repository, deploy with the workspace harness, then update `DEMO.md` with the live URL.
+
+## What Ran
+
+| Command | Result |
+|---|---|
+| factory scaffold for `retainer-hub-022114524805790317561` | harness applied; structural score 96/100 |
+| `node --check js/data.js js/store.js js/app.js` (individually) | exit 0 |
+| `node scripts/verify.mjs` | 10/10 checks passed |
+| `node scripts/render-smoke.mjs` | 10/10 render checks passed |
+| `node scripts/smoke.mjs` | 7/7 routes passed (entry, CSS, three JS modules, SPA deep link, fallback) |
+| `powershell -ExecutionPolicy Bypass -File .\init.ps1` | pending final run below |
+
+## Verification Evidence
+
+- Domain checks cover seed consistency, stage metadata, active-order selection, stage advancement, payment blocking/collection, order creation, invalid input, profile updates and admin metrics.
+- Render checks cover `#/overview`, `#/orders`, `#/orders/HTS-10482`, `#/order`, `#/account`, `#/admin`, not-found, admin unlock, production board and the order detail modal.
+- Route smoke test confirms `http://127.0.0.1:4176/` returns 200 and the deep link `/orders/HTS-10482` serves the SPA shell.
+- Runtime evidence is recorded after the final `init.ps1` and workspace gate runs.
+
+## Files
+
+- `index.html`, `styles.css`, `js/app.js` - interface.
+- `js/data.js`, `js/store.js` - seed data and testable domain logic.
+- `dev-server.mjs`, `vercel.json`, `.vercelignore` - local and deployment shape.
+- `scripts/verify.mjs`, `scripts/render-smoke.mjs`, `scripts/smoke.mjs` - verification.
+- `README.md`, `DEMO.md` - handover documentation.
+
+## Blockers
+
+- None.
+
+## Next
+
+1. Final verification and local handover.
+2. After user approval: repository URL, push, deploy, live URL, proposal.
+3. Production follow-up: server auth, database/API, Stripe, email/SMS and carrier webhooks.

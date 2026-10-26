@@ -1,0 +1,71 @@
+{
+  "prototype": "retainer-hub-022114524805790317561",
+  "purpose": "HoldThatSmile customer and operations app for ordering custom clear retainers: impression-kit and production tracking, account management, payments, and an admin dashboard for orders, customers and manufacturing.",
+  "created": "2026-10-26",
+  "last_updated": "2026-10-26",
+  "conventions": {
+    "status_values": ["todo", "in_progress", "blocked", "done"],
+    "verification": ".\\init.ps1 (Windows) / ./init.sh (bash)",
+    "one_feature_at_a_time": true
+  },
+  "features": [
+    {
+      "id": "proto-001",
+      "name": "Customer ordering and order tracking",
+      "description": "Seeded customer dashboard, seven-stage order journey, three-step retainers checkout with delivery validation and demo payment, order archive, reorder and customer notifications.",
+      "status": "done",
+      "dependencies": [],
+      "evidence": "node scripts/verify.mjs -> 10/10 passed; node scripts/render-smoke.mjs -> overview, orders, order detail and checkout routes render; node scripts/smoke.mjs -> entry and deep link return 200.",
+      "done_criteria": [
+        "Customer can place an order and see it in their order history",
+        "Customer can follow impression kit, lab, shipping and delivery stages",
+        "Customer dashboard and detail routes render from seeded data",
+        "Verification ran and output is recorded in progress.md"
+      ]
+    },
+    {
+      "id": "proto-002",
+      "name": "Customer account and preferences",
+      "description": "Profile, shipping address, lab care notes, notification preferences, payment method on file and smile history summary.",
+      "status": "done",
+      "dependencies": ["proto-001"],
+      "evidence": "node scripts/verify.mjs -> profile update persists and invalid email is rejected; node scripts/render-smoke.mjs -> #/account renders and save path is present.",
+      "done_criteria": [
+        "Profile and address data can be edited and saved",
+        "Notification preferences and lab notes persist",
+        "Account view renders responsively",
+        "Verification ran and output is recorded in progress.md"
+      ]
+    },
+    {
+      "id": "proto-003",
+      "name": "Staff operations console",
+      "description": "Demo staff PIN gate, live metrics, order search and filters, payment review and collection, stage advancement, production board, customer book and payment ledger.",
+      "status": "done",
+      "dependencies": ["proto-001"],
+      "evidence": "node scripts/verify.mjs -> advancement, payment blocking/collection and metrics pass; node scripts/render-smoke.mjs -> admin unlock, production tab and order modal render; node scripts/smoke.mjs -> app modules and SPA routes return 200.",
+      "done_criteria": [
+        "Staff can unlock operations with the demo PIN",
+        "Staff can view orders, production, customers and payments",
+        "Staff can collect a pending payment and advance manufacturing stages",
+        "Customer-facing timeline updates after a staff action",
+        "Verification ran and output is recorded in progress.md"
+      ]
+    },
+    {
+      "id": "proto-004",
+      "name": "Production backend, auth and payment provider",
+      "description": "Replace the demo store with an authenticated API and database, add server-enforced customer/staff roles, real Stripe payment intents and webhooks, transactional email/SMS and carrier tracking events.",
+      "status": "todo",
+      "dependencies": ["proto-001", "proto-002", "proto-003"],
+      "evidence": "",
+      "done_criteria": [
+        "Orders and customers persist in a real database",
+        "Customer and staff authorization is enforced server-side",
+        "A real payment provider processes test-mode charges and webhooks",
+        "Email/SMS and carrier tracking are connected",
+        "Verification and deployment are recorded in progress.md"
+      ]
+    }
+  ]
+}
