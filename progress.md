@@ -7,6 +7,7 @@
 - Staff can sign in with demo PIN `2468`, review live metrics, filter orders, open a manufacturing detail, advance stages, collect a pending payment, browse the production board, customer book and payment ledger.
 - State is seeded in `js/data.js` and persisted in browser `localStorage`; reset is available in the footer.
 - Design is warm clinical: cream, deep green, mint and coral, with a serif display face and custom SVG retainer illustration.
+- Delivered: pushed `main` to https://github.com/francisco-arturo/retainer-hub-022114524805790317561 and deployed to https://retainer-hub-022114524805790317561.vercel.app (READY, `dpl_4t9scf6BuB2J6LehUjMUxu86LsBo`).
 
 ## Current Objective
 
@@ -15,7 +16,7 @@ Deliver the first complete prototype slice for HoldThatSmile: ordering, customer
 ## Last Updated
 
 - **Last Updated**: 2026-10-26
-- **Recommended Next Step**: hand over for local review. On approval: create/push the repository, deploy with the workspace harness, then update `DEMO.md` with the live URL.
+- **Recommended Next Step**: proposal drafted in chat against the live URL after homework. On send, log the row in `upwork-kit/TRACKER.csv`.
 
 ## What Ran
 
@@ -28,7 +29,10 @@ Deliver the first complete prototype slice for HoldThatSmile: ordering, customer
 | `node scripts/smoke.mjs` | 7/7 routes passed (entry, CSS, three JS modules, SPA deep link, fallback) |
 | `powershell -ExecutionPolicy Bypass -File .\init.ps1` | exit 0: syntax checks, 10/10 domain checks, 10/10 render checks, 7/7 route checks |
 | `node .harness/gate.mjs` (workspace root) | PASSED: 71 prototypes verified, this prototype 100/100 |
-| local commit | `8504a9a Build HoldThatSmile retainer customer app and lab console` |
+| local commit | `8504a9a Build HoldThatSmile retainer customer app and lab console`; `ad8b1ec Record final verification evidence` |
+| `git push -u origin main` | pushed to https://github.com/francisco-arturo/retainer-hub-022114524805790317561 |
+| `node .harness/deploy.mjs retainer-hub-022114524805790317561` | READY in 5s, `dpl_4t9scf6BuB2J6LehUjMUxu86LsBo`, alias https://retainer-hub-022114524805790317561.vercel.app |
+| live Node fetch | `/`, `/styles.css`, `/js/app.js`, `/js/store.js`, `/js/data.js` all HTTP 200; HTML contains HoldThatSmile |
 
 ## Verification Evidence
 
@@ -52,6 +56,6 @@ Deliver the first complete prototype slice for HoldThatSmile: ordering, customer
 
 ## Next
 
-1. Final verification and local handover.
-2. After user approval: repository URL, push, deploy, live URL, proposal.
+1. Proposal in chat from `upwork-kit/`, with the standard opener and the live URL.
+2. Log the proposal in `upwork-kit/TRACKER.csv` only once it is sent.
 3. Production follow-up: server auth, database/API, Stripe, email/SMS and carrier webhooks.

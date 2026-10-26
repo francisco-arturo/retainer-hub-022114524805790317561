@@ -2,7 +2,7 @@
 
 ## Last Updated
 
-- 2026-10-26 - first complete prototype slice built, verified, committed (`8504a9a`) and handed over locally.
+- 2026-10-26 - built, verified, committed (`8504a9a`, `ad8b1ec`), pushed to https://github.com/francisco-arturo/retainer-hub-022114524805790317561 and deployed to https://retainer-hub-022114524805790317561.vercel.app.
 
 ## Current Objective
 
@@ -10,9 +10,9 @@ HoldThatSmile customer and operations app for ordering custom clear retainers wi
 
 ## Recommended Next Step
 
-1. Run `powershell -ExecutionPolicy Bypass -File .\init.ps1` and the workspace gate `node ..\.harness\gate.mjs`.
-2. Hand over http://127.0.0.1:4176 for review. Do not push or deploy until the user approves and shares a repository URL.
-3. After approval, deploy and record the live URL in `DEMO.md`.
+1. Draft the proposal in chat from `upwork-kit/` using the standard opener and https://retainer-hub-022114524805790317561.vercel.app.
+2. Run the pre-submit checklist, then log the row in `upwork-kit/TRACKER.csv` only after it is sent.
+3. Keep production hardening (`proto-004`) out of the demo claims until it is actually built.
 
 ## What Exists
 
@@ -35,7 +35,7 @@ HoldThatSmile customer and operations app for ordering custom clear retainers wi
 - Checkout is simulated; no real payment provider.
 - Browser `localStorage` is the only persistence.
 - Email/SMS, carrier tracking and manufacturing integrations are represented in the UI, not connected.
-- No live URL yet by design; approval gate applies.
+- The live app is deployed; the demo still uses seeded data and browser persistence.
 
 ## Blockers
 
@@ -45,5 +45,5 @@ HoldThatSmile customer and operations app for ordering custom clear retainers wi
 
 - If the baseline gate is red on arrival, fix that before adding scope.
 - Continue in this directory; do not create a second prototype.
-- Do not deploy or write a proposal before the local handover is approved.
+- The build is now deployed at https://retainer-hub-022114524805790317561.vercel.app.
 - Retirement, if ever needed, goes through the workspace `retire-prototype.ps1`.

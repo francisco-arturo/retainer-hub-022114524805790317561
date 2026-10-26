@@ -2,6 +2,9 @@
 
 A customer app and lab console for ordering custom clear retainers and following every step from impression kit to delivery.
 
+- **Live URL:** https://retainer-hub-022114524805790317561.vercel.app
+- **Repository:** https://github.com/francisco-arturo/retainer-hub-022114524805790317561
+- **Deployment:** `dpl_4t9scf6BuB2J6LehUjMUxu86LsBo`, READY
 - **Local URL:** http://127.0.0.1:4176
 - **Start:** `npm start` (from this directory)
 - **Staff demo PIN:** `2468`
@@ -12,7 +15,7 @@ A customer app and lab console for ordering custom clear retainers and following
 
 | # | Do this | What to show |
 |---|---|---|
-| 1 | Open http://127.0.0.1:4176/#/overview | Maya's seeded dashboard: active order HTS-10482, "In the lab" at step 4 of 7, latest lab updates and the care routine |
+| 1 | Open https://retainer-hub-022114524805790317561.vercel.app/#/overview | Maya's seeded dashboard: active order HTS-10482, "In the lab" at step 4 of 7, latest lab updates and the care routine |
 | 2 | Click **Track my order** | The full journey: confirmed, kit shipped, impressions received, in production, quality check, shipping and delivery, plus kit tracking, address and payment |
 | 3 | Click **New order** | Three-step checkout. The Pair is preselected. Continue, keep the prefilled details, use test card `4242 4242 4242 4242`, any future expiry and any 3-digit CVC. Place the order |
 | 4 | Land on the new order | A new `HTS-...` order at step 1, a "Order placed" confirmation, and an empty lab timeline ready to move |
@@ -45,10 +48,11 @@ A customer app and lab console for ordering custom clear retainers and following
 
 ## If something fails while they look
 
-- Return to http://127.0.0.1:4176/#/overview.
+- Return to https://retainer-hub-022114524805790317561.vercel.app/#/overview.
 - Use **Reset demo data** in the footer to restore the seeded state.
-- Re-run `npm start` if the local server stopped; the app has no build step.
+- The app uses hash routes, so every screen is reachable from the live root without a server rewrite.
 - Re-run verification with `powershell -ExecutionPolicy Bypass -File .\init.ps1`.
+- Local fallback: `npm start` then http://127.0.0.1:4176.
 
 ## Not built (the production next step)
 

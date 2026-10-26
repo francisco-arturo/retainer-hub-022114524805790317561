@@ -4,6 +4,9 @@ A working customer app and lab operations prototype for **HoldThatSmile**, a dir
 
 Built as a deployable static app with no runtime dependencies.
 
+**Live:** https://retainer-hub-022114524805790317561.vercel.app  
+**Repository:** https://github.com/francisco-arturo/retainer-hub-022114524805790317561
+
 ## Run it
 
 ```powershell
