@@ -26,14 +26,17 @@ Deliver the first complete prototype slice for HoldThatSmile: ordering, customer
 | `node scripts/verify.mjs` | 10/10 checks passed |
 | `node scripts/render-smoke.mjs` | 10/10 render checks passed |
 | `node scripts/smoke.mjs` | 7/7 routes passed (entry, CSS, three JS modules, SPA deep link, fallback) |
-| `powershell -ExecutionPolicy Bypass -File .\init.ps1` | pending final run below |
+| `powershell -ExecutionPolicy Bypass -File .\init.ps1` | exit 0: syntax checks, 10/10 domain checks, 10/10 render checks, 7/7 route checks |
+| `node .harness/gate.mjs` (workspace root) | PASSED: 71 prototypes verified, this prototype 100/100 |
+| local commit | `8504a9a Build HoldThatSmile retainer customer app and lab console` |
 
 ## Verification Evidence
 
 - Domain checks cover seed consistency, stage metadata, active-order selection, stage advancement, payment blocking/collection, order creation, invalid input, profile updates and admin metrics.
 - Render checks cover `#/overview`, `#/orders`, `#/orders/HTS-10482`, `#/order`, `#/account`, `#/admin`, not-found, admin unlock, production board and the order detail modal.
 - Route smoke test confirms `http://127.0.0.1:4176/` returns 200 and the deep link `/orders/HTS-10482` serves the SPA shell.
-- Runtime evidence is recorded after the final `init.ps1` and workspace gate runs.
+- Final `init.ps1` exit 0; workspace gate passed with this prototype at 100/100. Local commit `8504a9a`.
+- Local server confirmed at `http://127.0.0.1:4176/` with HTTP 200.
 
 ## Files
 
